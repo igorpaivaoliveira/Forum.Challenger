@@ -1,0 +1,49 @@
+﻿@model Forum.Challenger.Web.Models.PersonsLoginModel
+
+@{
+    ViewData["Title"] = "Login";
+}
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    int cdPerson = HttpContextAccessor.HttpContext.Session.GetInt32("cdPerson") ?? 0;
+}
+@if (cdPerson > 0)
+{
+    <script>window.location.href = "../Home";</script>
+}
+<h4>Login</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="DsEmail" class="control-label"></label>
+                <input asp-for="DsEmail" class="form-control" />
+                <span asp-validation-for="DsEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DsPassword" class="control-label"></label>
+                <input asp-for="DsPassword" class="form-control" type="password" />
+                <span asp-validation-for="DsPassword" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Login" class="btn btn-primary" />
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.error))
+{
+    <script>
+        toastr["error"]("@ViewBag.error");
+    </script>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

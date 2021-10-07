@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IEnumerable<Forum.Challenger.Web.Models.TopicsModel>
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    string nmPerson = HttpContextAccessor.HttpContext.Session.GetString("nmPerson");
+    int cdPerson = HttpContextAccessor.HttpContext.Session.GetInt32("cdPerson") ?? 0;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Forum Challenger</h1>
+</div>
+<div class="text-rirught">
+    @if (cdPerson > 0)
+    {
+        <p>
+            <a asp-controller="Topic" asp-action="Create" class="btn btn-primary float-right">Create New Topic</a>
+        </p>
+        <br />
+        <br />
+    }
+</div>
+
+@if (Model != null)
+{
+    @foreach (var item in Model)
+    {
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.DsTitle)</h5>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.DsText)</p>
+                @if (cdPerson == item.CdPerson)
+                {
+                    @Html.ActionLink("Edit", "Edit", "Topic", new { cdTopico = item.CdTopic }, htmlAttributes: new { @class = "btn btn-primary" })
+                }
+
+            </div>
+        </div>
+        <br />
+    }
+}
+else
+{
+    <div>No topic has been found!</div>
+}
+@if (!string.IsNullOrEmpty(ViewBag.success))
+{
+    <script>
+        toastr["success"]("@ViewBag.success");
+    </script>
+
+    ViewBag.success = "";
+}

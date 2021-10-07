@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Forum.Challenger.Domain\Forum.Challenger.Domain.csproj" />
+    <ProjectReference Include="..\Forum.Challenger.Infra\Forum.Challenger.Infra.csproj" />
+  </ItemGroup>
+
+</Project>
