@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Challenger.Infra", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Challenger.Ioc", "Forum.Challenger.Ioc\Forum.Challenger.Ioc.csproj", "{92368FA3-1987-43E5-A39B-801BAA74A797}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Challenger.Web", "Forum.Challenger.Web\Forum.Challenger.Web.csproj", "{27CC3E9E-15B5-404B-8480-225B5A61F9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Forum.Challenger.Web", "Forum.Challenger.Web\Forum.Challenger.Web.csproj", "{27CC3E9E-15B5-404B-8480-225B5A61F9D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Forum.Challenger.Test", "Forum.Challenger.Test\Forum.Challenger.Test.csproj", "{C4465DBC-2970-445D-8732-03B52BD8DC17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{27CC3E9E-15B5-404B-8480-225B5A61F9D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27CC3E9E-15B5-404B-8480-225B5A61F9D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27CC3E9E-15B5-404B-8480-225B5A61F9D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4465DBC-2970-445D-8732-03B52BD8DC17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4465DBC-2970-445D-8732-03B52BD8DC17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4465DBC-2970-445D-8732-03B52BD8DC17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4465DBC-2970-445D-8732-03B52BD8DC17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

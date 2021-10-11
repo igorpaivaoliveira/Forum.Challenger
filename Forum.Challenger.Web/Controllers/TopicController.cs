@@ -23,8 +23,12 @@ namespace Forum.Challenger.Web.Controllers
             _mediator = mediator;
         }
 
-        // GET: TopicController
         public async Task<ActionResult> Index()
+        {
+            return View();
+        }
+
+        public async Task<ActionResult> Create()
         {
             return View();
         }

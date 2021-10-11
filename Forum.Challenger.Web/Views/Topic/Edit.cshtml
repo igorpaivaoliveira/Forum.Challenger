@@ -28,7 +28,7 @@
 <h4>Edit Topic</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-12">
         <form asp-action="EditTopic">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DsText" class="control-label"></label>
-                <input asp-for="DsText" class="form-control" value="@Model.DsText" />
+                <textarea asp-for="DsText" class="form-control">@Model.DsText</textarea>
                 <span asp-validation-for="DsText" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
@@ -57,9 +57,9 @@
 </div>
 @if (!string.IsNullOrEmpty(ViewBag.error))
 {
-    <script>
+<script>
         toastr["error"]("@ViewBag.error");
-    </script>
+</script>
 }
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

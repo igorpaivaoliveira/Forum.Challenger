@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@model IEnumerable<Forum.Challenger.Web.Models.TopicsModel>
+@model IEnumerable<Forum.Challenger.Web.Models.VwTopicDetailsModel>
 @using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
 @{
@@ -30,7 +30,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.DsTitle)</h5>
-                <p class="card-text">@Html.DisplayFor(modelItem => item.DsText)</p>
+                <h6 class="text-secondary">By: @Html.DisplayFor(modelItem => item.NmPerson) | Posted: @Html.DisplayFor(modelItem => item.DtTopic)</h6>
+                <p class="card-text">@Html.Raw(item.DsText) ...</p>
                 @if (cdPerson == item.CdPerson)
                 {
                     @Html.ActionLink("Edit", "Edit", "Topic", new { cdTopico = item.CdTopic }, htmlAttributes: new { @class = "btn btn-primary" })

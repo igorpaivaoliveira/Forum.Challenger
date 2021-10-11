@@ -36,6 +36,7 @@ namespace Forum.Challenger.Web
             {
                 cfg.CreateMap<Topics, TopicsModel>();
                 cfg.CreateMap<Persons, PersonsModel>();
+                cfg.CreateMap<VwTopicDetails, VwTopicDetailsModel>();
             });
 
             IMapper mapper = config.CreateMapper();

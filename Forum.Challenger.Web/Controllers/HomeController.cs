@@ -25,9 +25,9 @@ namespace Forum.Challenger.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var response = await _mediator.Send(new TopicsListCommand());
+            var response = await _mediator.Send(new VwTopicDetailsListCommand());
 
-            var topics = new List<TopicsModel>();
+            var topics = new List<VwTopicDetailsModel>();
             _mapper.Map(response.Value, topics);
 
             if (TempData.Count > 0)

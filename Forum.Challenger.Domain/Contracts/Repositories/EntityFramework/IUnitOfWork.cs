@@ -7,5 +7,7 @@ namespace Forum.Challenger.Domain.Contracts.Repositories.EntityFramework
         IPersonsEFRepository PersonsEFRepository { get; }
 
         ITopicsEFRepository TopicsEFRepository { get; }
+
+        IVwTopicsDetailsEFRepository VwTopicsDetailsEFRepository { get; }
     }
 }

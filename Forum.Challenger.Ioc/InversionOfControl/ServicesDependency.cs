@@ -29,6 +29,7 @@ namespace Forum.Challenger.Ioc.InversionOfControl
             services.AddScoped<IRequestHandler<TopicsListCommand, Response>, TopicsListHandler>();
             services.AddScoped<IRequestHandler<TopicsUpdateCommand, Response>, TopicsUpdateHandler>();
             services.AddScoped<IRequestHandler<TopicsCreateCommand, Response>, TopicsCreateHandler>();
+            services.AddScoped<IRequestHandler<VwTopicDetailsListCommand, Response>, VwTopicDetailsListHandler>();
 
             #endregion
 
