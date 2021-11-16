@@ -5,13 +5,13 @@ using Xunit;
 
 namespace Forum.Challenger.Test
 {
-    public class PersonTest
+    public class PersonTest : IClassFixture<BaseTest>
     {
         IMediator _mediator;
 
-        public PersonTest(IMediator mediator)
+        public PersonTest(BaseTest baseTest)
         {
-            _mediator = mediator;
+            _mediator = baseTest.mediator;
         }
 
         [Fact(DisplayName = "Successful response PersonCreateTest")]
